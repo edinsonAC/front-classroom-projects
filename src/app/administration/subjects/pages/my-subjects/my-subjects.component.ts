@@ -57,9 +57,7 @@ export class MySubjectsComponent extends BaseComponent {
   students(datos:string){
     this.subjectService.Students(datos).subscribe({
       next: value => {
-         this.alertSuccess(value.data)
          this.projectGroup = value
-         console.log(value)
        },
        error: e => {
          this.alertError(e.error.data)
