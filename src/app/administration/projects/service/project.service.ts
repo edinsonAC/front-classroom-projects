@@ -14,6 +14,7 @@ export class ProjectService {
 
   private readonly URL:string = environment.API_NODE
   private readonly URL_Spring: string = environment.API_SPRING
+  private readonly URL_Spring2: string = environment.API_SPRING2
 
   constructor(
     private http:HttpClient
@@ -24,7 +25,7 @@ export class ProjectService {
   // }
 
   create(body:NewProjectInterface):Observable<ResponseHttp>{
-    return this.http.post<ResponseHttp>(`${this.URL_Spring}/project/`, body)
+    return this.http.post<ResponseHttp>(`${this.URL_Spring2}/project/`, body)
   }
 
   uploadExcelOfProjects(id:string,archivo:any):Observable<ResponseHttp>{

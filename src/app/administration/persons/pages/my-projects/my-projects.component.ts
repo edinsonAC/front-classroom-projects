@@ -17,6 +17,7 @@ export class MyProjectsComponent extends BaseComponent {
 
   items!: MenuItem[];
   home!: MenuItem;
+  role!:string
 
   email!:string
 
@@ -27,6 +28,7 @@ export class MyProjectsComponent extends BaseComponent {
     super()
     this.email = localStorage.getItem("email")!
     this.uploadMyProjects()
+    this.role = localStorage.getItem("role")!
   }
 
   ngOnInit(): void {
@@ -40,12 +42,30 @@ export class MyProjectsComponent extends BaseComponent {
     this.personService.viewMyProjects(this.email).subscribe({
       next: value => {
         this.projects = value.data.projects
+        console.log(value.data.projects)
         this.loading = false
       },
       error: e => {
         this.loading = false
       }
     })
+  }
+
+  approveProject(id: string){
+    this.personService.changeState(id , "approve").subscribe({
+      next: value => {
+        this.alertSuccess(value.data)
+        this.loading = false
+      },
+      error: e => {
+        this.loading = false
+      }
+    })
+  }
+
+
+  disapproveProject(){
+    this.alertSuccess("Disapproved project")
   }
 
 }

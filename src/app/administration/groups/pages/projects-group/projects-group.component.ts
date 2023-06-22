@@ -145,7 +145,6 @@ export class ProjectsGroupComponent extends BaseComponent {
       next: resp =>{
         this.studentsGroup = resp;
         this.visible = false;
-        console.log(this.studentsGroup)
       }
     })
   }
@@ -158,6 +157,7 @@ export class ProjectsGroupComponent extends BaseComponent {
     this.groupService.AsigProject(parsedFormProject.proyecto, parsedFormProject.persona, parsedFormProject.state).subscribe({
       next: value => {
         this.alertSuccess(value.data)
+        this.visible = false;
       },
       error: e => {
         this.alertError(e.error.data)
@@ -184,6 +184,7 @@ export class ProjectsGroupComponent extends BaseComponent {
   handleCancel(): void {
     console.log('Button cancel clicked!');
     this.isVisible = false;
+    this.visible = false;
   }
 
   onBasicUploadAuto(event:any) {

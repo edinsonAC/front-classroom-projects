@@ -14,6 +14,7 @@ export class GroupService {
 
   URL: string = environment.API_NODE
   URL_spring: string = environment.API_SPRING
+  URL_Spring2: string = environment.API_SPRING2
 
 
   constructor(
@@ -41,7 +42,7 @@ export class GroupService {
 
   //Asignar un alumno a un proyecto
   AsigProject(proyecto:string, persona: string, state: string): Observable<any>{
-    return this.http.post<any>(`${this.URL_spring}/project/person_project`, {proyecto, persona, state})
+    return this.http.post<any>(`${this.URL_Spring2}/project/person_project`, {proyecto, persona, state})
   }
 
 

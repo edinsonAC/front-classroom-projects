@@ -39,6 +39,7 @@
                             </th>
                             <th>Grupo</th>
                             <th>Estado Del Proyecto</th>
+                            <th>Aprobar proyecto</th>
                         </tr>
                     </ng-template>
                     <ng-template pTemplate="body" let-project>
@@ -50,6 +51,10 @@
                             <td>{{ project.project.group.name }}</td>
                             <td>
                                 <div class="state">
+                                    <div *ngIf="project.project.state === 'approve' ">
+                                      <p-tag icon="pi pi-check" severity="primary" value="Aprobado"></p-tag>
+                                    </div>
+
                                     <div *ngIf="project.project.state === 'in progress' ">
                                         <p-tag icon="pi pi-hourglass" severity="primary" value="En Proceso"></p-tag>
                                     </div>
@@ -59,6 +64,18 @@
                                             value="Finalizado"></p-tag>
                                     </div>
                                 </div>
+                            </td>
+                            <td>
+                              <ng-container *ngIf="role === 'docente'">
+                                <p-button label="Aprobar" icon="pi pi-eye" (onClick)="approveProject(project.project.id)"
+                                    styleClass="p-button-sm p-button-raised p-button-primary"></p-button>
+                              </ng-container>
+
+                              <ng-container *ngIf="role === 'docente'">
+                                <p-button label="Desaprobar" icon="pi pi-times" (onClick)="disapproveProject()"
+                                    styleClass="p-button-sm p-button-raised p-button-danger">
+                                </p-button>
+                              </ng-container>
                             </td>
                         </tr>
                     </ng-template>
