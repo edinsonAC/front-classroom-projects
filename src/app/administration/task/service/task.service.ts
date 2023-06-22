@@ -27,6 +27,7 @@ export class TaskService {
     return this.http.get<AllTasksOfProjectInterface>(`${this.URL}/task/${group_id}/${id_project}`)
   }
 
+  //crear una nueva tarea
   newTask(body: NewTaskInterface): Observable<ResponseHttp> {
     return this.http.post<ResponseHttp>(`${this.URL}/task/create`, body)
   }
@@ -42,4 +43,6 @@ export class TaskService {
   addDelivery(id: string, file: any): Observable<ResponseHttp> {
     return this.http.patch<ResponseHttp>(`${this.URL}/task_project/add_delivery/${id}`, file)
   }
+
+
 }

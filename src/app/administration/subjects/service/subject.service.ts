@@ -29,4 +29,8 @@ export class SubjectService {
   register(code:string, name:string):Observable<ResponseHttp>{
     return this.http.post<ResponseHttp>(`${this.URL}/subject/create`,{code, name})
   }
+
+  findAllTaskOfProject(group_id: string, id_project: string){
+    return this.http.get<any>(`${this.URL}/task/${group_id}/${id_project}`)
+  }
 }
