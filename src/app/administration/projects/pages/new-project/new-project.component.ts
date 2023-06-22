@@ -72,6 +72,7 @@ export class NewProjectComponent extends BaseComponent {
 
     this.projectService.create(parsedFormProject).subscribe({
       next: value => {
+        console.log(value)
         this.alertSuccess(value.data)
         this.router.navigateByUrl(`/dashboard/proyectos/${this.subject_name}/${this.group_name}/${this.group_id}`)
       },

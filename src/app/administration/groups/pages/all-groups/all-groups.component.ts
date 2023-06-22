@@ -95,7 +95,7 @@ export class AllGroupsComponent extends BaseComponent {
             this.teachers = []
           },
           error: err => {
-            this.alertError(err.error.data)
+            this.alertError(err.data)
           }
         })
       },
@@ -137,7 +137,7 @@ export class AllGroupsComponent extends BaseComponent {
     this.infoGroup.reset()
     this.teachers = []
   }
-  
+
   handleCancel(): void {
     this.isVisible = false;
     this.infoGroup.reset()
