@@ -1,0 +1,9 @@
+// src/proxy.conf.json
+{
+    "/api": {
+      "target": "http://52.15.222.122:9000",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }
+  
