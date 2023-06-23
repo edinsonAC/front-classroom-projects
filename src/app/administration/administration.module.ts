@@ -25,6 +25,7 @@ import { MyProjectsComponent } from './persons/pages/my-projects/my-projects.com
 import { NewTaskComponent } from './task/pages/new-task/new-task.component';
 import { ViewTaskComponent } from './task/pages/view-task/view-task.component';
 import { TaskManagerComponent } from './task/pages/task-manager/task-manager.component';
+import { ProponentProjectComponent } from './projects/pages/proponent-project/proponent-project.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { TaskManagerComponent } from './task/pages/task-manager/task-manager.com
     NewTaskComponent,
     ViewTaskComponent,
     TaskManagerComponent,
+    ProponentProjectComponent,
   ],
   imports: [
     CommonModule,

@@ -20,12 +20,12 @@ export class ProjectService {
     private http:HttpClient
   ) { }
 
-  // listProject(id:string): Observable<ResponseHttp>{
-  //   return this.http.get<ResponseHttp>(`${this.URL_Spring}/project`)
-  // }
-
   create(body:NewProjectInterface):Observable<ResponseHttp>{
     return this.http.post<ResponseHttp>(`${this.URL_Spring2}/project/`, body)
+  }
+
+  proponentProject(body:NewProjectInterface):Observable<ResponseHttp>{
+    return this.http.post<ResponseHttp>(`${this.URL}/project/create`, body)
   }
 
   uploadExcelOfProjects(id:string,archivo:any):Observable<ResponseHttp>{
