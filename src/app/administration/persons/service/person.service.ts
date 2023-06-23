@@ -62,4 +62,9 @@ export class PersonService {
   uploadImgProfile(id:string, file:any):Observable<ResponseHttp>{
     return this.http.post<ResponseHttp>(`${this.URL}/person/image/${id}`, file)
   }
+
+  //Aprobar proyecto
+  changeState(id:string, state:string):Observable<ResponseHttp>{
+    return this.http.patch<ResponseHttp>(`${this.URL}/project/change_state`,{id, state})
+  }
 }

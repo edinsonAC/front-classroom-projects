@@ -60,17 +60,6 @@ export class PersonsGroupComponent extends BaseComponent {
     })
   }
 
-  // taskActive() {
-  //   this.taskService.countActiveTask(this.id).subscribe({
-  //     next: value => {
-  //       this.numTask = value.data
-  //     },
-  //     error: e =>{
-  //       console.log(e);
-  //     }
-  //   })
-  // }
-
   closeGroup() {
     this.alertWarning("¿Está seguro@ que desea cerrar el grupo? - Está acción es irreversible")
   }

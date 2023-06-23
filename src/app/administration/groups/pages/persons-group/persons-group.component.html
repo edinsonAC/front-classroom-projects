@@ -22,6 +22,10 @@
                 </ng-template>
                 <ng-template pTemplate="right">
                     <nz-space>
+                        <p-button label="Proponer proyecto" icon="pi pi-file-edit"
+                        routerLink="/dashboard/proyecto/{{subject}}/{{id}}/proponent-project"
+                        styleClass="p-button-sm p-button-warning"></p-button>
+
                         <p-button label="Proyectos" icon="pi pi-folder-open"
                             routerLink="/dashboard/proyectos/{{subject}}/{{group}}/{{id}}"
                             styleClass="p-button-sm p-button-raised p-button-help"></p-button>

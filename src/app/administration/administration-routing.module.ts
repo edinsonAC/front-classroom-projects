@@ -19,6 +19,7 @@ import { MyProjectsComponent } from './persons/pages/my-projects/my-projects.com
 import { NewTaskComponent } from './task/pages/new-task/new-task.component';
 import { ViewTaskComponent } from './task/pages/view-task/view-task.component';
 import { TaskManagerComponent } from './task/pages/task-manager/task-manager.component';
+import { ProponentProjectComponent } from './projects/pages/proponent-project/proponent-project.component';
 
 const routes: Routes = [
   {
@@ -39,7 +40,7 @@ const routes: Routes = [
 
       { path: "materias", component: AllSubjectsComponent },
         { path: ":materia/grupos/:id", component: AllGroupsComponent },
-      
+
       { path: "mis_materias", component: MySubjectsComponent },
       { path: "personas/:subject/:group/:id", component: PersonsGroupComponent }, //TODO: COLOCAR AQUI GROUP_NAME EN LUGAR DE GROUP
       { path: "task/:subject/:group_name/:group_id/:project_id", component:AllTaskComponent},
@@ -50,6 +51,7 @@ const routes: Routes = [
         { path: "proyecto/agregar/:subject/:group_name/:id", component:  NewProjectComponent},
         { path: "proyecto/:subject/:group/:group_id/:id", component: SeeOneProjectComponent },
         { path: "proyecto/my_projects", component:MyProjectsComponent},
+        { path: "proyecto/:subject/:id/proponent-project", component: ProponentProjectComponent },
       { path: "**", redirectTo: "" }
     ]
   }
